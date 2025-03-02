@@ -14,7 +14,6 @@ builder.Services.AddMemoryCache(); // For storing OTP codes
 builder.Services.AddSingleton<ITwilioService, TwilioService>();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -23,6 +22,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<RateLimitingMiddleware>();
+app.UseMiddleware<PhoneNumberValidationMiddleware>();
 
 app.UseAuthorization();
 
