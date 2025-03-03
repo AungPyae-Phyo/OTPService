@@ -38,4 +38,4 @@ A secure and scalable OTP (One-Time Password) verification system built with ASP
 ### Installation  
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/otp-service.git  
+   https://github.com/AungPyae-Phyo/OTPService.git
